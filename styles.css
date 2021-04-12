@@ -37,6 +37,7 @@
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --fixed-width: 620px;
+  --nav-bar-gap: 2.5rem;
 }
 /*
 =============== 
@@ -56,8 +57,10 @@ body {
   font-size: 16px;
 }
 
-section {
-  margin-bottom: 60px;
+section::before {
+  content: "";
+  display: block;
+  height: var(--nav-bar-gap);
 }
 
 .wrapper {
@@ -130,7 +133,7 @@ Header - Navigation bar
 header {
   display: flex;
   justify-content: space-between;
-  padding: 1em;
+  padding: 1rem;
   position: fixed;
   top: 0;
   right: 0;
@@ -259,9 +262,9 @@ Hero section
 ===============
 */
 .hero {
-  height: 100vh;
-  background-color: #1c1d25;
-  color: white;
+  height: calc(100vh - var(--nav-bar-gap));
+  background-color: var(--clr-white);
+  color: var(--clr-black);
   font-size: 40px;
   padding: 0.2em;
 }
@@ -271,7 +274,7 @@ Hero section
   height: 100%;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid white;
+  border: 1px solid black;
 }
 
 .hero-text {
