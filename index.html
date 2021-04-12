@@ -6,6 +6,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/874035deac.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,17 +18,26 @@
   </head>
   <body>
     <header>
-      <nav>
-        <div class="logo">LOGO</div>
-        <ul>
-          <li>About me</li>
-          <li><a href="#portfolio">Projects</a></li>
-          <li>Contact</li>
+      <div class="logo"><a class="logo__link" href="#hero">LOGO</a></div>
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#about">About me</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#portfolio">Projects</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#contact">Contact</a>
+          </li>
         </ul>
       </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="hero">
       <div class="hero-text-area">
         <div class="hero-text">
           <h1 class="large">Victor Garcia Mestre</h1>
@@ -33,6 +46,8 @@
         </div>
       </div>
     </section>
+
+    <section id="about"></section>
 
     <section id="portfolio">
       <div class="wrapper">
@@ -70,9 +85,29 @@
       </div>
     </section>
 
-    <section class="contact">
+    <section id="contact">
       <div class="wrapper">
         <h1>Contact me</h1>
+        <ul class="social-list">
+          <li>
+            <a class="fas fa-at" href="mailto:vgmestre@gmail.com"></a>
+          </li>
+          <li>
+            <a
+              class="fab fa-linkedin"
+              href="https://www.linkedin.com/in/vgmestre/"
+            ></a>
+          </li>
+          <li>
+            <a
+              class="fab fa-instagram"
+              href="https://www.instagram.com/vgmestre/"
+            ></a>
+          </li>
+          <li>
+            <a class="fab fa-twitter" href="https://twitter.com/vgmestre"></a>
+          </li>
+        </ul>
       </div>
     </section>
     <section class="footer"></section>

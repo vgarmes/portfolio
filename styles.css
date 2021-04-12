@@ -89,6 +89,30 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
+.fab,
+.fas {
+  padding: 20px;
+  font-size: 50px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  color: var(--clr-black);
+  border: 1px solid black;
+}
+
+.fab:hover,
+.fas:hover {
+  opacity: 0.7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 @media only screen and (min-width: 1480px) {
 }
 
@@ -103,18 +127,120 @@ a {
 Header - Navigation bar
 ===============
 */
-
-nav {
+header {
   display: flex;
   justify-content: space-between;
+  padding: 1em;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: var(--clr-white);
+}
+
+nav {
+  position: fixed;
+  background: var(--clr-black);
+  color: var(--clr-white);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  transform: translateX(100%);
+  transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
+  height: 100%;
+}
+
+.nav__link {
+  color: inherit;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  color: var(--clr-primary-5);
+}
+
+.nav-toggle {
+  padding: 0.5em;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  z-index: 1000;
+  outline: none;
+}
+
+.nav-open .nav {
+  transform: translateX(0%);
+}
+
+.nav-open .nav-toggle {
+  position: fixed;
+}
+
+.nav-open .hamburger {
+  transform: rotate(0.625turn);
+}
+
+.nav-open .hamburger::before {
+  transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after {
+  opacity: 0;
+}
+
+.hamburger {
+  display: block; /* by default it's in-line because it's a span */
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  background: var(--clr-black);
+  width: 2em;
+  height: 3px;
+  border-radius: 1em;
+  transition: transform 250ms ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.hamburger::before {
+  top: 6px;
+}
+.hamburger::after {
+  bottom: 6px;
 }
 
 .logo {
-  border: 1px solid white;
+  line-height: 1;
+}
+.logo a {
+  color: var(--clr-black);
 }
 
-ul {
+.nav-list {
   display: flex;
   justify-content: space-around;
   list-style: none;
@@ -123,7 +249,7 @@ ul {
   font-size: 30px;
 }
 
-li {
+.nav-list li {
   width: 200px;
 }
 
@@ -191,11 +317,23 @@ Portfolio section
   .projects-list {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 1rem 0 0 0;
   }
   .project-card {
     width: 100%;
     margin: 0 0.25rem;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .projects-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .project-card {
+    width: calc(50% - 1rem);
   }
 }
 
@@ -258,6 +396,19 @@ Portfolio section
   border: 1px solid var(--clr-primary-5);
   color: var(--clr-primary-5);
 }
+
+/*
+=============== 
+Contact section
+===============
+*/
+
+.social-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /*
 =============== 
 Footer section
