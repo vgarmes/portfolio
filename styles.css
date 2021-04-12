@@ -1,0 +1,248 @@
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(205, 78%, 60%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+section {
+  padding-top: 60px;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0 60px;
+}
+
+h1 {
+  font-weight: 900;
+  color: #0f141e;
+  font-size: 3rem;
+}
+
+h1.large {
+  font-size: 4.5rem;
+}
+
+h5 {
+  font-size: 0.875rem;
+}
+
+@media only screen and (min-width: 1480px) {
+}
+
+@media only screen and (min-width: 1280px) {
+}
+
+@media only screen and (min-width: 768px) and (min-height: 620px) {
+}
+
+/*
+=============== 
+Header - Navigation bar
+===============
+*/
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  border: 1px solid white;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  width: 50%;
+  text-align: center;
+  font-size: 30px;
+}
+
+li {
+  width: 200px;
+}
+
+/*
+=============== 
+Hero section
+===============
+*/
+.hero {
+  height: 100vh;
+  background-color: #1c1d25;
+  color: white;
+  font-size: 40px;
+  padding: 0.2em;
+}
+
+.hero-text-area {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid white;
+}
+
+.hero-text {
+  margin-left: 60px;
+}
+
+.hero-text p,
+.btn {
+  font-weight: 300;
+  font-size: 30px;
+}
+
+.btn {
+  width: 180px;
+  height: 60px;
+  line-height: 60px; /*same as height, to center text */
+  margin-top: 20px;
+  background-color: coral;
+  border-radius: 30px;
+  text-align: center;
+}
+
+/*
+=============== 
+Portfolio section
+===============
+*/
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.project-card {
+  width: 350px;
+  height: 500px;
+  box-shadow: var(--light-shadow);
+  border-radius: var(--radius);
+}
+
+.project-card:hover {
+  box-shadow: var(--dark-shadow);
+}
+
+.project-card img {
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
+  border-top-right-radius: var(--radius);
+  border-top-left-radius: var(--radius);
+}
+
+.project-card footer {
+  padding: 1.5rem 1rem;
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.project-badge {
+  color: var(--clr-primary-5);
+  background: var(--clr-primary-10);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+}
+
+.project-info h4 {
+  margin-bottom: 0;
+}
+
+.project-card p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.project-link {
+  text-decoration: none;
+  text-align: center;
+  width: 120px;
+  margin: 1rem auto 0 auto;
+  color: var(--clr-primary-1);
+  letter-spacing: var(--spacing);
+  border: 1px solid var(--clr-primary-1);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+}
+
+.project-link:hover {
+  border: 1px solid var(--clr-primary-5);
+  color: var(--clr-primary-5);
+}
+/*
+=============== 
+Footer section
+===============
+*/
+
+.footer {
+  height: 500px;
+}
