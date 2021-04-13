@@ -38,6 +38,7 @@
   --max-width: 1170px;
   --fixed-width: 620px;
   --nav-bar-gap: 2.5rem;
+  --font-weight-thick: 900;
 }
 /*
 =============== 
@@ -65,6 +66,7 @@ section::before {
 
 .wrapper {
   width: 100%;
+  height: 100%;
   padding: 0 30px;
 }
 
@@ -90,6 +92,7 @@ h5 {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 ul {
@@ -239,9 +242,6 @@ nav {
 .logo {
   line-height: 1;
 }
-.logo a {
-  color: var(--clr-black);
-}
 
 .nav-list {
   display: flex;
@@ -261,41 +261,59 @@ nav {
 Hero section
 ===============
 */
-.hero {
-  height: calc(100vh - var(--nav-bar-gap));
+#hero {
+  height: 100vh;
   background-color: var(--clr-white);
   color: var(--clr-black);
-  font-size: 40px;
-  padding: 0.2em;
 }
 
 .hero-text-area {
   display: flex;
-  height: 100%;
+  height: calc(100% - var(--nav-bar-gap));
   flex-direction: column;
   justify-content: center;
   border: 1px solid black;
 }
 
-.hero-text {
-  margin-left: 60px;
-}
-
-.hero-text p,
-.btn {
-  font-weight: 300;
-  font-size: 30px;
-}
-
-.btn {
-  width: 180px;
-  height: 60px;
-  line-height: 60px; /*same as height, to center text */
+.hero-text p {
   margin-top: 20px;
-  background-color: coral;
-  border-radius: 30px;
-  text-align: center;
+  max-width: 500px;
 }
+
+.hero__links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 280px;
+}
+
+.hero__link {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-thick);
+  border-bottom: 0.25rem solid transparent;
+}
+.hero__link:hover {
+  border-color: var(--clr-black);
+}
+
+/*.hero__link {
+  position: relative;
+}
+
+.hero__link::after {
+  height: 1px;
+  border-bottom: 2px solid var(--clr-black);
+  background: 0 0;
+  position: absolute;
+  display: block;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  content: "";
+  transition: opacity 0.2s linear;
+  transform: translate(0, 100%);
+}*/
 
 /*
 =============== 
@@ -308,9 +326,17 @@ Portfolio section
   margin: 1rem -0.5rem 0 -0.5rem; /*negative margin to compensate project-card margins*/
 }
 
-.project-card {
+/*.project-card {
   width: 350px;
   height: 500px;
+  margin: 1rem 0.5rem;
+  box-shadow: var(--light-shadow);
+  border-radius: var(--radius);
+}*/
+
+.project-card {
+  width: 350px;
+  height: 450px;
   margin: 1rem 0.5rem;
   box-shadow: var(--light-shadow);
   border-radius: var(--radius);
@@ -346,14 +372,18 @@ Portfolio section
 
 .project-card img {
   width: 100%;
-  height: 18rem;
+  height: 40%;
   object-fit: cover;
   border-top-right-radius: var(--radius);
   border-top-left-radius: var(--radius);
 }
 
 .project-card footer {
-  padding: 1.5rem 1rem;
+  padding: 1rem;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .project-info {
