@@ -1,29 +1,6 @@
 :root {
-  /* dark shades of primary color*/
-  --clr-primary-1: hsl(205, 86%, 17%);
-  --clr-primary-2: hsl(205, 77%, 27%);
-  --clr-primary-3: hsl(205, 72%, 37%);
-  --clr-primary-4: hsl(205, 63%, 48%);
-  /* primary/main color */
-  --clr-primary-5: hsl(205, 78%, 60%);
-  /* lighter shades of primary color */
-  --clr-primary-6: hsl(205, 89%, 70%);
-  --clr-primary-7: hsl(205, 90%, 76%);
-  --clr-primary-8: hsl(205, 86%, 81%);
-  --clr-primary-9: hsl(205, 90%, 88%);
-  --clr-primary-10: hsl(205, 100%, 96%);
-  /* darkest grey - used for headings */
-  --clr-grey-1: hsl(209, 61%, 16%);
-  --clr-grey-2: hsl(211, 39%, 23%);
-  --clr-grey-3: hsl(209, 34%, 30%);
-  --clr-grey-4: hsl(209, 28%, 39%);
-  /* grey used for paragraphs */
-  --clr-grey-5: hsl(210, 22%, 49%);
-  --clr-grey-6: hsl(209, 23%, 60%);
-  --clr-grey-7: hsl(211, 27%, 70%);
-  --clr-grey-8: hsl(210, 31%, 80%);
-  --clr-grey-9: hsl(212, 33%, 89%);
-  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-grey: rgb(234, 231, 225);
+  --clr-grey-dark: rgb(156, 155, 151);
   --clr-white: #fff;
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
@@ -53,7 +30,7 @@ Global Styles
   box-sizing: border-box;
 }
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "DM Serif Text", "Roboto", sans-serif;
   line-height: 1.5;
   font-size: 16px;
 }
@@ -80,10 +57,6 @@ h1 {
   font-weight: 900;
   color: #0f141e;
   font-size: 3rem;
-}
-
-h1.large {
-  font-size: 4.5rem;
 }
 
 h5 {
@@ -143,6 +116,7 @@ header {
   left: 0;
   background: var(--clr-white);
   opacity: 0.95;
+  z-index: 10; /* puts nav bar on top of skewed hero section*/
 }
 .nav {
   visibility: hidden;
@@ -213,7 +187,7 @@ header {
 }
 
 .nav__link:hover {
-  color: var(--clr-primary-5);
+  color: var(--clr-grey);
 }
 
 .nav-toggle {
@@ -308,8 +282,18 @@ Hero section
 */
 #hero {
   height: 100vh;
-  background-color: var(--clr-white);
   color: var(--clr-black);
+  position: relative;
+}
+
+h1.large {
+  color: var(--clr-black);
+}
+
+@media only screen and (min-width: 600px) {
+  h1.large {
+    font-size: 4.5rem;
+  }
 }
 
 .hero-text-area {
@@ -317,7 +301,17 @@ Hero section
   height: calc(100% - var(--nav-bar-gap));
   flex-direction: column;
   justify-content: center;
-  border: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  background: var(--clr-grey);
+  bottom: 0;
+  width: 100%;
+  height: 80px;
 }
 
 .hero-text p {
@@ -396,7 +390,7 @@ Portfolio section
   }
   .project-card {
     width: 100%;
-    margin: 0 0.25rem;
+    margin: 0.5rem 0.25rem;
   }
 }
 
@@ -451,8 +445,8 @@ Portfolio section
 .project-badge {
   font-size: 0.9rem;
   text-transform: uppercase;
-  color: var(--clr-primary-5);
-  background: var(--clr-primary-10);
+  color: var(--clr-grey-dark);
+  background: var(--clr-grey);
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
   margin-right: 1rem;
@@ -472,16 +466,16 @@ Portfolio section
   text-align: center;
   width: 120px;
   margin: 1rem auto 0 auto;
-  color: var(--clr-primary-1);
+  color: var(--clr-black);
   letter-spacing: var(--spacing);
-  border: 1px solid var(--clr-primary-1);
+  border: 1px solid var(--clr-black);
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
 }
 
 .project-link:hover {
-  border: 1px solid var(--clr-primary-5);
-  color: var(--clr-primary-5);
+  border: 1px solid var(--clr-grey-dark);
+  color: var(--clr-grey-dark);
 }
 
 /*
