@@ -142,6 +142,7 @@ header {
   right: 0;
   left: 0;
   background: var(--clr-white);
+  opacity: 0.95;
 }
 .nav {
   visibility: hidden;
