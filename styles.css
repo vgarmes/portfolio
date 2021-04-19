@@ -14,7 +14,7 @@
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --fixed-width: 620px;
-  --nav-bar-gap: 2.5rem;
+  --nav-bar-height: 2.5rem;
   --font-weight-thick: 900;
 }
 /*
@@ -29,16 +29,21 @@ Global Styles
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  font-size: 16px;
   font-family: "DM Serif Text", "Roboto", sans-serif;
   line-height: 1.5;
-  font-size: 16px;
 }
 
 section::before {
   content: "";
   display: block;
-  height: var(--nav-bar-gap);
+  height: var(--nav-bar-height);
 }
 
 .wrapper {
@@ -54,7 +59,6 @@ section::before {
 }
 
 h1 {
-  font-weight: 900;
   color: #0f141e;
   font-size: 3rem;
 }
@@ -72,6 +76,11 @@ ul {
   list-style: none;
 }
 
+@media only screen and (max-width: 350px), (max-height: 500px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
 .fab,
 .fas {
   padding: 20px;
@@ -87,18 +96,6 @@ ul {
 .fab:hover,
 .fas:hover {
   opacity: 0.7;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-@media only screen and (min-width: 1480px) {
-}
-
-@media only screen and (min-width: 1280px) {
-}
-
-@media only screen and (min-width: 768px) and (min-height: 620px) {
 }
 
 /*
@@ -187,7 +184,7 @@ header {
 }
 
 .nav__link:hover {
-  color: var(--clr-grey);
+  color: var(--clr-grey-dark);
 }
 
 .nav-toggle {
@@ -283,35 +280,49 @@ Hero section
 #hero {
   height: 100vh;
   color: var(--clr-black);
-  position: relative;
 }
 
-h1.large {
+#hero .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.large-header {
   color: var(--clr-black);
 }
 
 @media only screen and (min-width: 600px) {
-  h1.large {
+  .large-header {
     font-size: 4.5rem;
   }
 }
 
 .hero-text-area {
   display: flex;
-  height: calc(100% - var(--nav-bar-gap));
+  height: 80vh;
   flex-direction: column;
   justify-content: center;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  overflow: scroll;
 }
 
-#hero::after {
+@media only screen and (max-width: 600px) {
+}
+
+.hero-text-area::after {
   content: "";
   position: absolute;
   background: var(--clr-grey);
   bottom: 0;
-  width: 100%;
-  height: 80px;
+  left: 0;
+  right: 0;
+  height: 10%;
+}
+
+@media only screen and (max-width: 350px) and (max-height: 500px) {
+  .hero-text-area::after {
+    height: 5%;
+  }
 }
 
 .hero-text p {
@@ -488,6 +499,13 @@ Contact section
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .social-list {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /*
