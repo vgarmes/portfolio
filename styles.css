@@ -16,6 +16,8 @@
   --fixed-width: 620px;
   --nav-bar-height: 2.5rem;
   --font-weight-thick: 900;
+  --font-sans: "DM Serif Text", sans-serif;
+  --font-mono: "Roboto", monospace;
 }
 /*
 =============== 
@@ -36,7 +38,7 @@ html {
 
 body {
   font-size: 16px;
-  font-family: "DM Serif Text", "Roboto", sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.5;
 }
 
@@ -67,6 +69,10 @@ h5 {
   font-size: 0.875rem;
 }
 
+p {
+  padding-bottom: 1rem;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -83,14 +89,11 @@ ul {
 }
 .fab,
 .fas {
-  padding: 20px;
-  font-size: 50px;
-  width: 100px;
+  padding: 0 2rem 1rem 2rem;
+  font-size: 3rem;
   text-align: center;
   text-decoration: none;
-  margin: 5px 2px;
   color: var(--clr-black);
-  border: 1px solid black;
 }
 
 .fab:hover,
@@ -240,6 +243,16 @@ header {
   transition: transform 250ms ease-in-out;
 }
 
+.hamburger:hover {
+  background: var(--clr-grey-dark);
+}
+.hamburger:hover::before {
+  background: var(--clr-grey-dark);
+}
+.hamburger:hover::after {
+  background: var(--clr-grey-dark);
+}
+
 .hamburger::before,
 .hamburger::after {
   content: "";
@@ -298,6 +311,10 @@ Hero section
   }
 }
 
+.grey-text {
+  color: var(--clr-grey-dark);
+}
+
 .hero-text-area {
   display: flex;
   height: 80vh;
@@ -346,24 +363,6 @@ Hero section
 .hero__link:hover {
   border-color: var(--clr-black);
 }
-
-/*.hero__link {
-  position: relative;
-}
-
-.hero__link::after {
-  height: 1px;
-  border-bottom: 2px solid var(--clr-black);
-  background: 0 0;
-  position: absolute;
-  display: block;
-  top: 100%;
-  right: 0;
-  width: 100%;
-  content: "";
-  transition: opacity 0.2s linear;
-  transform: translate(0, 100%);
-}*/
 
 /*
 =============== 
@@ -494,14 +493,37 @@ Portfolio section
 Contact section
 ===============
 */
+#contact {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 1rem;
+}
+
+.contact-btn {
+  display: inline-block;
+  text-align: center;
+  color: var(--clr-black);
+  letter-spacing: var(--spacing);
+  border: 1px solid var(--clr-black);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.contact-btn:hover {
+  border: 1px solid var(--clr-red-dark);
+  color: var(--clr-red-dark);
+}
 
 .social-list {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 300px) {
   .social-list {
     display: flex;
     flex-direction: column;
@@ -515,5 +537,6 @@ Footer section
 */
 
 .footer {
-  height: 500px;
+  text-align: center;
+  font-size: 0.75rem;
 }

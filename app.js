@@ -15,3 +15,7 @@ navLinks.forEach((link) => {
 navClose.addEventListener("click", () => {
   document.body.classList.remove("nav-open");
 });
+
+document.getElementById(
+  "current-year"
+).innerHTML = new Date().getFullYear().toString();
