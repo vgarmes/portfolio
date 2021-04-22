@@ -179,14 +179,11 @@ header {
   width: 180px;
 }
 
-.nav__link {
+.nav__link h1 {
   color: var(--clr-white);
-  font-size: 3rem;
-  font-weight: var(--font-weight-thick);
-  text-decoration: none;
 }
 
-.nav__link:hover {
+.nav__link h1:hover {
   color: var(--clr-grey-dark);
 }
 
@@ -293,6 +290,11 @@ Hero section
 #hero {
   height: 100vh;
   color: var(--clr-black);
+  background-image: linear-gradient(
+    to right,
+    var(--clr-white),
+    rgba(0, 0, 0, 0)
+  );
 }
 
 #hero .wrapper {
@@ -305,25 +307,18 @@ Hero section
   color: var(--clr-black);
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) and (min-height: 600px) {
   .large-header {
     font-size: 4.5rem;
   }
 }
 
-.grey-text {
-  color: var(--clr-grey-dark);
-}
-
 .hero-text-area {
   display: flex;
-  height: 80vh;
+  height: 80%;
   flex-direction: column;
   justify-content: center;
   overflow: scroll;
-}
-
-@media only screen and (max-width: 600px) {
 }
 
 .hero-text-area::after {
@@ -355,6 +350,15 @@ Hero section
   width: 280px;
 }
 
+@media only screen and (max-height: 400px) {
+  .hero-text p {
+    margin-top: 5px;
+  }
+  .hero__links {
+    margin-top: 5px;
+  }
+}
+
 .hero__link {
   font-size: 1.25rem;
   font-weight: var(--font-weight-thick);
@@ -362,6 +366,67 @@ Hero section
 }
 .hero__link:hover {
   border-color: var(--clr-black);
+}
+
+.hero-img {
+  position: absolute;
+  right: 5%;
+  bottom: 50%;
+  transform: translateY(50%);
+  height: 80%;
+  z-index: -1;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero-img {
+    display: none;
+  }
+}
+
+/*
+=============== 
+About section
+===============
+*/
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-text-container {
+  width: 60%;
+}
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+}
+
+.about-img-container {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+}
+.about-img {
+  width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .about-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .about-text-container {
+    width: 100%;
+  }
+  .about-img-container {
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 /*
