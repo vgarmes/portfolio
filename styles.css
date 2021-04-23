@@ -407,7 +407,7 @@ About section
 .about-img-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 40%;
 }
 .about-img {
