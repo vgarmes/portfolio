@@ -317,6 +317,7 @@ Hero section
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -417,7 +418,7 @@ About section
 .about-img-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start; /*fixes bug that stretches picture on safari browsers*/
   width: 40%;
 }
 .about-img {
