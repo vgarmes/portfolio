@@ -491,27 +491,21 @@ Portfolio section
 
 .project-number {
   display: inline-block;
-  font-size: 1.25rem;
+  font-size: 2rem;
   color: var(--clr-primary-5);
   margin-bottom: 0.25rem;
 }
 
 .project-header {
-  margin-bottom: 1rem;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 }
 
 .project-title {
   font-size: 1.25rem;
   transition: var(--transition);
-  cursor: pointer;
   margin-right: 1rem;
-}
-
-.project-title:hover {
-  color: var(--clr-primary-4);
 }
 
 .project-description {
@@ -539,8 +533,8 @@ Portfolio section
 }
 
 .project-icon {
-  color: var(--clr-black);
-  font-size: 1.25rem;
+  color: var(--clr-primary-5);
+  font-size: 2rem;
   margin-right: 0.5rem;
   transition: var(--transition);
   vertical-align: middle;
