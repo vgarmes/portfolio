@@ -559,6 +559,12 @@ Portfolio section
     height: 22rem;
   }
 }
+
+@media screen and (max-width: 991px) {
+  .project-img::after {
+    display: none;
+  }
+}
 @media screen and (min-width: 992px) {
   .project {
     grid-template-columns: repeat(12, 1fr);
