@@ -343,7 +343,8 @@ Hero section
   left: 75%;
   bottom: 50%;
   transform: translate(-50%, 50%);
-  height: 60%;
+  height: 50%;
+  width: 50%;
   z-index: -1;
   opacity: 1;
 }
