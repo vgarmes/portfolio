@@ -477,7 +477,8 @@ Portfolio section
   opacity: 0.85;
   transition: var(--transition);
 }
-.project:hover .project-img::after {
+.project:hover .project-img::after,
+.project:active .project-img::after {
   opacity: 0;
 }
 
